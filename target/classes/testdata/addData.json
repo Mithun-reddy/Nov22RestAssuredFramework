@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "accountno": {
+          "type": "string"
+        },
+        "departmentno": {
+          "type": "string"
+        },
+        "salary": {
+          "type": "string"
+        },
+        "pincode": {
+          "type": "string"
+        },
+        "userid": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "accountno",
+        "departmentno",
+        "salary",
+        "pincode",
+        "userid",
+        "id"
+      ]
+    }
+  ]
+}
