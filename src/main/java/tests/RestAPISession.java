@@ -73,7 +73,7 @@ public class RestAPISession extends TestBase {
 //		RestAssured.given().body(JsonSchemaValidator.matchesJsonSchema(schemaFile)).
 	}
 	
-//	@Test
+	@Test
 	public void testJsonSchemaLogin() {
 		
 		File schemaFile = new File("C:\\Users\\user\\eclipse-workspace2\\"
@@ -94,14 +94,16 @@ public class RestAPISession extends TestBase {
 		String path = "/login";
 		RestAssured.baseURI = "https://us-central1-qa01-tekarch-accmanager.cloudfunctions.net";
 		
+//		Validating json schema for post request similar can be done for any request's response
+//		Can be verified by changing the type of any attribute in the schema file
 		Response res = RestAssured.given().when().headers(headers).body(loginAccount).post(path)
-		.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schemaFile)).and().extract().response();
+		.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schemaFile)).extract().response();
 		
 		System.out.println(res.asPrettyString());
 		
 	}
 	
-	@Test
+//	@Test
 	public void addData() throws IOException {
 		RestAssured.baseURI = "https://us-central1-qa01-tekarch-accmanager.cloudfunctions.net";
 		HashMap<String, String> headers = new HashMap<String, String>();
